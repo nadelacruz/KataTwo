@@ -16,6 +16,25 @@ public class BinaryChop {
             return midPoint;
         }
 
-        return -99;
+        int lowerBound;
+        int upperBound;
+
+        while (arrayOfNumbers[midPoint] != numberToSearch) {
+            if (numberToSearch > arrayOfNumbers[midPoint]) {
+                lowerBound = midPoint;
+                upperBound = arrayOfNumbers.length;
+                midPoint = (lowerBound + upperBound) / 2;
+                if (midPoint == upperBound - 1) {
+                    if (numberToSearch != arrayOfNumbers[midPoint]) {
+                        return -1;
+                    }
+                    break;
+                }
+            } else {
+                break;
+            }
+        }
+
+        return midPoint;
     }
 }

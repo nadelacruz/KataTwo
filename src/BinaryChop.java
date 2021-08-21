@@ -9,6 +9,13 @@ public class BinaryChop {
             }
             return 0;
         }
+
+        int midPoint = arrayOfNumbers.length / 2;
+
+        if (arrayOfNumbers[midPoint] == numberToSearch) {
+            return midPoint;
+        }
+
         return -99;
     }
 }
